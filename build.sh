@@ -1,15 +1,6 @@
 #!/bin/bash
 set -e
 
-function log {
-	local logStart="#"
-	local sourceLen=${#BASH_SOURCE[@]}
-	for ((i=$sourceLen-1; i>0; --i)); do
-		logStart="$logStart [$(basename ${BASH_SOURCE[$i]})]"
-	done
-	echo "$logStart $@"
-}
-
 function handle_bad_config {
 	log "Please read BUILDING.txt for more info."
 	log "BUILD FAILED"
